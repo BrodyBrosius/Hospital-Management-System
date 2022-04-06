@@ -35,7 +35,7 @@ app.post('/newpatient', async function(req, res) {
 
 
     await driver.executeLambda(async (txn) => {
-        await txn.execute("INSERT INTO PATIENTS ?", body);
+        await txn.execute("INSERT INTO test_table ?", body);
     });
 
     //THIS LINE IS A PROBLEM!!!
