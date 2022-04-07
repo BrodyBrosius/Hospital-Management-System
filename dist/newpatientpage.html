@@ -4,6 +4,7 @@
         <title>New Patient Portal</title>
     </head>
     <h1>Welcome to the New Patient Portal page.</h1>
+    <h2>This page is dedicated to basic contact information for the new patient.</h2>
     <body>
         <form action="http://localhost:3000/newpatient" method="POST">
             <label>
@@ -331,7 +332,71 @@
         <label for="phone">Preferred phone number for voice communication</label>
         <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"><br>
 
-        <button type="submit">Submit</button> 
+        <h2>Present Health of Patient</h2>
+
+        <label for="health_desc">Please describe your present health problems and their duration:</label><br>
+        <textarea id="health_desc" name="health_description" rows="10" cols="66" placeholder="Type here..."></textarea><br>
+
+        <label for="duration_of_problems">How long have you had the chronic conditions about which you are consulting us?</label><br>
+        <select>
+            <option value="Less_than_6_months">Less than 6 months</option>
+            <option value="6_months_to_2_years">6 months to 2 years</option>
+            <option value="2_to_5_years">2 to 5 years</option>
+            <option value="More_than_5_years">More than 5 years</option>
+        </select><br>
+
+        <label for="progression_of_problems">How have your health problems progressed since they began?</label><br>
+        <select>
+            <option value="stable">Stable</option>
+            <option value="gradually_improving">Gradually Improving</option>
+            <option value="fluctuating">Fluctuating</option>
+            <option value="gradually_worsening">Gradually Worsening</option>
+            <option value="rapidly_worsening">Rapidly Worsening</option>
+        </select><br>
+
+        <label for="intensity_of_problems">Please indicate the overall intensity of your symptoms</label><br>
+        <select>
+            <option value="mild">Mild</option>
+            <option value="moderate">Moderate</option>
+            <option value="severe">Severe</option>
+            <option value="very_severe">very Severe</option>
+        </select><br>
+
+        <label for="any_non_presc_drugs">Do you take any nonprescription drugs, vitamins and/or any other supplements? Please list them.</label><br>
+        <textarea id="any_non_presc_drugs" name="non_presc_drugs" rows="10" cols="66" placeholder="Type here..."></textarea><br>
+
+        <label for="any_presc_drugs">Do you currently take medication and/or receive medical treatment for your health condition(s)? If so, include all medications, treatments, and dosages.</label><br>
+        <textarea id="any_presc_drugs" name="presc_drugs" rows="10" cols="66" placeholder="Type here..."></textarea><br>
+
+        <label for="past_medical_history">Do you have any past medical history or problems (i.e.. illness, trauma, emotional stress, addictions, drug abuse, or anything else that will help us clearly understand your health condition)?</label><br>
+        <textarea id="past_medical_history" name="medical_history" rows="10" cols="66" placeholder="Type here..."></textarea><br>
+
+        <label for="family_history">Is there a family history of the health problem(s) listed above? If yes, please specify.</label><br>
+        <textarea id="family_history" name="family_med_history" rows="10" cols="66" placeholder="Type here..."></textarea><br>
+
+        <h2>Immunization Record</h2>
+        Please select what you have recieved vaccines for: <br>
+            <input type="checkbox" name="smallpox">
+            <label>Smallpox</label>
+            <input type="checkbox" name="polio">
+            <label>Polio</label>
+            <input type="checkbox" name="typhoid">
+            <label>Typhoid</label>
+            <input type="checkbox" name="mumps">
+            <label>Mumps</label>
+            <input type="checkbox" name="tetanus">
+            <label>Tetanus</label>
+            <input type="checkbox" name="Influenza">
+            <label>Influenza</label>
+            <input type="checkbox" name="covid_19">
+            <label>COVID-19 (at least  1 Johnson & Johnson shot or 2 Moderna/Pfizer shots)</label>
+            <input type="text" name="other_vax" placeholder="Other:"><br>
+
+            <label for="vax_reaction">Have you ever experienced a reaction to vaccination(s)? If yes, please specify.</label><br>
+            <textarea id="vax_reaction" name="prev_vax_reaction" rows="10" cols="66" placeholder="Type here..."></textarea><br>
+
+
+        
 
 
         </form>
