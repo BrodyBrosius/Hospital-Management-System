@@ -1,406 +1,499 @@
 <!DOCTYPE html>
-<html>
+<html lang="en-US">
     <head>
+        <meta charset="utf-8">
         <title>New Patient Portal</title>
     </head>
+
     <h1>Welcome to the New Patient Portal page.</h1>
     <h2>This page is dedicated to basic contact information for the new patient.</h2>
+
+
     <body>
         <form action="http://localhost:3000/newpatient" method="POST">
-            <label>
-                <h3>Patient Name:</h3>
-                Please enter the name of the patient here:
-                <input type="text" name="first_name" placeholder="First Name" required>
-                <input type="text" name="last_name" placeholder="Last Name" required><br>
-            </label>
+            <section>
+                    <fieldset>
+                        <h2>Basic Information</h2>
+                        <p>
+                            <label>
+                                <h3>Patient Name:</h3>
+                                Please enter the name of the patient here:
+                                <input type="text" name="first_name" placeholder="First Name" required>
+                                <input type="text" name="last_name" placeholder="Last Name" required><br>
+                            </label>
+                        </p>
 
-            <h3>Patient Date of Birth:</h3>
-            <label>
-                Please input the date of birth for the patient here:
-                <input type="date" name="date_of_birth" placeholder="Date of Birth" required><br>
-            </label>
+                        <h3>Patient Date of Birth:</h3>
+                        <p>
+                            <label>
+                                Please input the date of birth for the patient here:
+                                <input type="date" name="date_of_birth" placeholder="Date of Birth" required><br>
+                            </label>
+                        </p>
 
-            <h3>Patient Occupation:</h3>
-            <label>
-                Please input the occupation of the patient, if they are unemployed then write "unemployed":
-                <input type="text" name="occupation" placeholder="Occupation" required><br>
-            </label>
+                        <h3>Patient Occupation:</h3>
+                        <p>
+                            <label>
+                                Please input the occupation of the patient, if they are unemployed then write "unemployed":
+                                <input type="text" name="occupation" placeholder="Occupation" required><br>
+                            </label>
+                        </p>
 
-            <label>
-                How did the patient hear about us?
-                <input type="text" name="how_they_heard_about_us" required><br>
-
-            </label>
-
-        <h2>Contact Information</h2>
-
-
-        <h3>Address:</h3>
-        <label>
-            Street Address
-            <input type="text" name="street_address_line_one" placeholder="Street Address" required>
-        </label>
-
-        <label>
-            Street Address Line 2 (optional)
-            <input type="text" name="street_address_line_two" placeholder="Street Address Line 2"><br>
-        </label>
-
-        <label>
-            City
-            <input type="text" name="city" placeholder="City" required>
-        </label>
-
-        <label>
-            County/State/Province
-            <input type="text" name="county_state_province" placeholder="County/State/Province" required><br>
-        </label>
-
-        <label>
-            Postal / ZIP Code
-            <input type="text" name="postal_zip_code" placeholder="Postal / Zip Code" required>
-        </label>
-
-        <label for="country">Country or region</label>
-        <select id="country" name="country" autocomplete="country" enterkeyhint="done" required>
-            <option selected value="SPACER"> </option>
-            <option value="AF">Afghanistan</option>
-            <option value="AX">Åland Islands</option>
-            <option value="AL">Albania</option>
-            <option value="DZ">Algeria</option>
-            <option value="AS">American Samoa</option>
-            <option value="AD">Andorra</option>
-            <option value="AO">Angola</option>
-            <option value="AI">Anguilla</option>
-            <option value="AQ">Antarctica</option>
-            <option value="AG">Antigua &amp; Barbuda</option>
-            <option value="AR">Argentina</option>
-            <option value="AM">Armenia</option>
-            <option value="AW">Aruba</option>
-            <option value="AC">Ascension Island</option>
-            <option value="AU">Australia</option>
-            <option value="AT">Austria</option>
-            <option value="AZ">Azerbaijan</option>
-            <option value="BS">Bahamas</option>
-            <option value="BH">Bahrain</option>
-            <option value="BD">Bangladesh</option>
-            <option value="BB">Barbados</option>
-            <option value="BY">Belarus</option>
-            <option value="BE">Belgium</option>
-            <option value="BZ">Belize</option>
-            <option value="BJ">Benin</option>
-            <option value="BM">Bermuda</option>
-            <option value="BT">Bhutan</option>
-            <option value="BO">Bolivia</option>
-            <option value="BA">Bosnia &amp; Herzegovina</option>
-            <option value="BW">Botswana</option>
-            <option value="BV">Bouvet Island</option>
-            <option value="BR">Brazil</option>
-            <option value="IO">British Indian Ocean Territory</option>
-            <option value="VG">British Virgin Islands</option>
-            <option value="BN">Brunei</option>
-            <option value="BG">Bulgaria</option>
-            <option value="BF">Burkina Faso</option>
-            <option value="BI">Burundi</option>
-            <option value="KH">Cambodia</option>
-            <option value="CM">Cameroon</option>
-            <option value="CA">Canada</option>
-            <option value="CV">Cape Verde</option>
-            <option value="BQ">Caribbean Netherlands</option>
-            <option value="KY">Cayman Islands</option>
-            <option value="CF">Central African Republic</option>
-            <option value="TD">Chad</option>
-            <option value="CL">Chile</option>
-            <option value="CN">China</option>
-            <option value="CX">Christmas Island</option>
-            <option value="CC">Cocos (Keeling) Islands</option>
-            <option value="CO">Colombia</option>
-            <option value="KM">Comoros</option>
-            <option value="CG">Congo - Brazzaville</option>
-            <option value="CD">Congo - Kinshasa</option>
-            <option value="CK">Cook Islands</option>
-            <option value="CR">Costa Rica</option>
-            <option value="CI">Côte d’Ivoire</option>
-            <option value="HR">Croatia</option>
-            <option value="CW">Curaçao</option>
-            <option value="CY">Cyprus</option>
-            <option value="CZ">Czechia</option>
-            <option value="DK">Denmark</option>
-            <option value="DJ">Djibouti</option>
-            <option value="DM">Dominica</option>
-            <option value="DO">Dominican Republic</option>
-            <option value="EC">Ecuador</option>
-            <option value="EG">Egypt</option>
-            <option value="SV">El Salvador</option>
-            <option value="GQ">Equatorial Guinea</option>
-            <option value="ER">Eritrea</option>
-            <option value="EE">Estonia</option>
-            <option value="SZ">Eswatini</option>
-            <option value="ET">Ethiopia</option>
-            <option value="FK">Falkland Islands (Islas Malvinas)</option>
-            <option value="FO">Faroe Islands</option>
-            <option value="FJ">Fiji</option>
-            <option value="FI">Finland</option>
-            <option value="FR">France</option>
-            <option value="GF">French Guiana</option>
-            <option value="PF">French Polynesia</option>
-            <option value="TF">French Southern Territories</option>
-            <option value="GA">Gabon</option>
-            <option value="GM">Gambia</option>
-            <option value="GE">Georgia</option>
-            <option value="DE">Germany</option>
-            <option value="GH">Ghana</option>
-            <option value="GI">Gibraltar</option>
-            <option value="GR">Greece</option>
-            <option value="GL">Greenland</option>
-            <option value="GD">Grenada</option>
-            <option value="GP">Guadeloupe</option>
-            <option value="GU">Guam</option>
-            <option value="GT">Guatemala</option>
-            <option value="GG">Guernsey</option>
-            <option value="GN">Guinea</option>
-            <option value="GW">Guinea-Bissau</option>
-            <option value="GY">Guyana</option>
-            <option value="HT">Haiti</option>
-            <option value="HM">Heard &amp; McDonald Islands</option>
-            <option value="HN">Honduras</option>
-            <option value="HK">Hong Kong</option>
-            <option value="HU">Hungary</option>
-            <option value="IS">Iceland</option>
-            <option value="IN">India</option>
-            <option value="ID">Indonesia</option>
-            <option value="IR">Iran</option>
-            <option value="IQ">Iraq</option>
-            <option value="IE">Ireland</option>
-            <option value="IM">Isle of Man</option>
-            <option value="IL">Israel</option>
-            <option value="IT">Italy</option>
-            <option value="JM">Jamaica</option>
-            <option value="JP">Japan</option>
-            <option value="JE">Jersey</option>
-            <option value="JO">Jordan</option>
-            <option value="KZ">Kazakhstan</option>
-            <option value="KE">Kenya</option>
-            <option value="KI">Kiribati</option>
-            <option value="XK">Kosovo</option>
-            <option value="KW">Kuwait</option>
-            <option value="KG">Kyrgyzstan</option>
-            <option value="LA">Laos</option>
-            <option value="LV">Latvia</option>
-            <option value="LB">Lebanon</option>
-            <option value="LS">Lesotho</option>
-            <option value="LR">Liberia</option>
-            <option value="LY">Libya</option>
-            <option value="LI">Liechtenstein</option>
-            <option value="LT">Lithuania</option>
-            <option value="LU">Luxembourg</option>
-            <option value="MO">Macao</option>
-            <option value="MG">Madagascar</option>
-            <option value="MW">Malawi</option>
-            <option value="MY">Malaysia</option>
-            <option value="MV">Maldives</option>
-            <option value="ML">Mali</option>
-            <option value="MT">Malta</option>
-            <option value="MH">Marshall Islands</option>
-            <option value="MQ">Martinique</option>
-            <option value="MR">Mauritania</option>
-            <option value="MU">Mauritius</option>
-            <option value="YT">Mayotte</option>
-            <option value="MX">Mexico</option>
-            <option value="FM">Micronesia</option>
-            <option value="MD">Moldova</option>
-            <option value="MC">Monaco</option>
-            <option value="MN">Mongolia</option>
-            <option value="ME">Montenegro</option>
-            <option value="MS">Montserrat</option>
-            <option value="MA">Morocco</option>
-            <option value="MZ">Mozambique</option>
-            <option value="MM">Myanmar (Burma)</option>
-            <option value="NA">Namibia</option>
-            <option value="NR">Nauru</option>
-            <option value="NP">Nepal</option>
-            <option value="NL">Netherlands</option>
-            <option value="NC">New Caledonia</option>
-            <option value="NZ">New Zealand</option>
-            <option value="NI">Nicaragua</option>
-            <option value="NE">Niger</option>
-            <option value="NG">Nigeria</option>
-            <option value="NU">Niue</option>
-            <option value="NF">Norfolk Island</option>
-            <option value="KP">North Korea</option>
-            <option value="MK">North Macedonia</option>
-            <option value="MP">Northern Mariana Islands</option>
-            <option value="NO">Norway</option>
-            <option value="OM">Oman</option>
-            <option value="PK">Pakistan</option>
-            <option value="PW">Palau</option>
-            <option value="PS">Palestine</option>
-            <option value="PA">Panama</option>
-            <option value="PG">Papua New Guinea</option>
-            <option value="PY">Paraguay</option>
-            <option value="PE">Peru</option>
-            <option value="PH">Philippines</option>
-            <option value="PN">Pitcairn Islands</option>
-            <option value="PL">Poland</option>
-            <option value="PT">Portugal</option>
-            <option value="PR">Puerto Rico</option>
-            <option value="QA">Qatar</option>
-            <option value="RE">Réunion</option>
-            <option value="RO">Romania</option>
-            <option value="RU">Russia</option>
-            <option value="RW">Rwanda</option>
-            <option value="WS">Samoa</option>
-            <option value="SM">San Marino</option>
-            <option value="ST">São Tomé &amp; Príncipe</option>
-            <option value="SA">Saudi Arabia</option>
-            <option value="SN">Senegal</option>
-            <option value="RS">Serbia</option>
-            <option value="SC">Seychelles</option>
-            <option value="SL">Sierra Leone</option>
-            <option value="SG">Singapore</option>
-            <option value="SX">Sint Maarten</option>
-            <option value="SK">Slovakia</option>
-            <option value="SI">Slovenia</option>
-            <option value="SB">Solomon Islands</option>
-            <option value="SO">Somalia</option>
-            <option value="ZA">South Africa</option>
-            <option value="GS">South Georgia &amp; South Sandwich Islands</option>
-            <option value="KR">South Korea</option>
-            <option value="SS">South Sudan</option>
-            <option value="ES">Spain</option>
-            <option value="LK">Sri Lanka</option>
-            <option value="BL">St Barthélemy</option>
-            <option value="SH">St Helena</option>
-            <option value="KN">St Kitts &amp; Nevis</option>
-            <option value="LC">St Lucia</option>
-            <option value="MF">St Martin</option>
-            <option value="PM">St Pierre &amp; Miquelon</option>
-            <option value="VC">St Vincent &amp; Grenadines</option>
-            <option value="SR">Suriname</option>
-            <option value="SJ">Svalbard &amp; Jan Mayen</option>
-            <option value="SE">Sweden</option>
-            <option value="CH">Switzerland</option>
-            <option value="TW">Taiwan</option>
-            <option value="TJ">Tajikistan</option>
-            <option value="TZ">Tanzania</option>
-            <option value="TH">Thailand</option>
-            <option value="TL">Timor-Leste</option>
-            <option value="TG">Togo</option>
-            <option value="TK">Tokelau</option>
-            <option value="TO">Tonga</option>
-            <option value="TT">Trinidad &amp; Tobago</option>
-            <option value="TA">Tristan da Cunha</option>
-            <option value="TN">Tunisia</option>
-            <option value="TR">Turkey</option>
-            <option value="TM">Turkmenistan</option>
-            <option value="TC">Turks &amp; Caicos Islands</option>
-            <option value="TV">Tuvalu</option>
-            <option value="UG">Uganda</option>
-            <option value="UA">Ukraine</option>
-            <option value="AE">United Arab Emirates</option>
-            <option value="GB">United Kingdom</option>
-            <option value="US">United States</option>
-            <option value="UY">Uruguay</option>
-            <option value="UM">US Outlying Islands</option>
-            <option value="VI">US Virgin Islands</option>
-            <option value="UZ">Uzbekistan</option>
-            <option value="VU">Vanuatu</option>
-            <option value="VA">Vatican City</option>
-            <option value="VE">Venezuela</option>
-            <option value="VN">Vietnam</option>
-            <option value="WF">Wallis &amp; Futuna</option>
-            <option value="EH">Western Sahara</option>
-            <option value="YE">Yemen</option>
-            <option value="ZM">Zambia</option>
-            <option value="ZW">Zimbabwe</option>
-        </select>  
-        </section><br>
-
-        <h3>Personal Contact Information:</h3>
-        <label>
-            Email:
-            <input type="email" name="email_address" placeholder="email" required><br>
-        </label>
-
-        
-            Can we contact you via email regarding your appointments and/or questions you may have?<br>
-            <input type="radio" id="yes_to_contact_via_email" name="email_contact" value="yes">
-            <label for="yes_to_contact_via_email">Yes</label><br>
-            <input type="radio" id="no_to_contact_via_email" name="email_contact" value="no">
-            <label for="no_to_contact_via_email">No</label><br>
-
-        <label for="phone">Preferred phone number for voice communication</label>
-        <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"><br>
-
-        <h2>Present Health of Patient</h2>
-
-        <label for="health_desc">Please describe your present health problems and their duration:</label><br>
-        <textarea id="health_desc" name="health_description" rows="10" cols="66" placeholder="Type here..."></textarea><br>
-
-        <label for="duration_of_problems">How long have you had the chronic conditions about which you are consulting us?</label><br>
-        <select>
-            <option value="Less_than_6_months">Less than 6 months</option>
-            <option value="6_months_to_2_years">6 months to 2 years</option>
-            <option value="2_to_5_years">2 to 5 years</option>
-            <option value="More_than_5_years">More than 5 years</option>
-        </select><br>
-
-        <label for="progression_of_problems">How have your health problems progressed since they began?</label><br>
-        <select>
-            <option value="stable">Stable</option>
-            <option value="gradually_improving">Gradually Improving</option>
-            <option value="fluctuating">Fluctuating</option>
-            <option value="gradually_worsening">Gradually Worsening</option>
-            <option value="rapidly_worsening">Rapidly Worsening</option>
-        </select><br>
-
-        <label for="intensity_of_problems">Please indicate the overall intensity of your symptoms</label><br>
-        <select>
-            <option value="mild">Mild</option>
-            <option value="moderate">Moderate</option>
-            <option value="severe">Severe</option>
-            <option value="very_severe">very Severe</option>
-        </select><br>
-
-        <label for="any_non_presc_drugs">Do you take any nonprescription drugs, vitamins and/or any other supplements? Please list them.</label><br>
-        <textarea id="any_non_presc_drugs" name="non_presc_drugs" rows="10" cols="66" placeholder="Type here..."></textarea><br>
-
-        <label for="any_presc_drugs">Do you currently take medication and/or receive medical treatment for your health condition(s)? If so, include all medications, treatments, and dosages.</label><br>
-        <textarea id="any_presc_drugs" name="presc_drugs" rows="10" cols="66" placeholder="Type here..."></textarea><br>
-
-        <label for="past_medical_history">Do you have any past medical history or problems (i.e.. illness, trauma, emotional stress, addictions, drug abuse, or anything else that will help us clearly understand your health condition)?</label><br>
-        <textarea id="past_medical_history" name="medical_history" rows="10" cols="66" placeholder="Type here..."></textarea><br>
-
-        <label for="family_history">Is there a family history of the health problem(s) listed above? If yes, please specify.</label><br>
-        <textarea id="family_history" name="family_med_history" rows="10" cols="66" placeholder="Type here..."></textarea><br>
-
-        <h2>Immunization Record</h2>
-        Please select what you have recieved vaccines for: <br>
-            <input type="checkbox" name="smallpox"/>
-            <label>Smallpox</label>
-            <input type="checkbox" name="polio"/>
-            <label>Polio</label>
-            <input type="checkbox" name="typhoid"/>
-            <label>Typhoid</label>
-            <input type="checkbox" name="mumps"/>
-            <label>Mumps</label>
-            <input type="checkbox" name="tetanus"/>
-            <label>Tetanus</label>
-            <input type="checkbox" name="Influenza"/>
-            <label>Influenza</label>
-            <input type="checkbox" name="covid_19"/>
-            <label>COVID-19 (at least  1 Johnson & Johnson shot or 2 Moderna/Pfizer shots)</label>
-            <input type="text" name="other_vax" placeholder="Other:"><br>
-
-            <label for="vax_reaction">Have you ever experienced a reaction to vaccination(s)? If yes, please specify.</label><br>
-            <textarea id="vax_reaction" name="prev_vax_reaction" rows="10" cols="66" placeholder="Type here..."></textarea><br>
+                        <p>
+                            <label>
+                                How did the patient hear about us?
+                                <input type="text" name="how_they_heard_about_us" required><br>
+                            </label>
+                        </p>
+                    </fieldset>
+            </section>
 
 
-        
+
+            <section>
+                <fieldset>
+                    <h2>Contact Information</h2>
+
+                    <h3>Address:</h3>
+
+                    <p>
+                        <label>
+                            Street Address
+                            <input type="text" name="street_address_line_one" placeholder="Street Address" required>
+                        </label>
+                    </p>
+
+                    <p>
+                        <label>
+                            Street Address Line 2 (optional)
+                            <input type="text" name="street_address_line_two" placeholder="Street Address Line 2" required><br>
+                        </label>
+                    </p>
+
+                    <p>
+                        <label>
+                            City
+                            <input type="text" name="city" placeholder="City" required>
+                        </label>
+                    </p>
+
+                    <p>
+                        <label>
+                            County/State/Province
+                            <input type="text" name="county_state_province" placeholder="County/State/Province" required><br>
+                        </label>
+                    </p>
+
+                    <p>
+                        <label>
+                            Postal / ZIP Code
+                            <input type="text" name="postal_zip_code" placeholder="Postal / Zip Code" required>
+                        </label>
+                    </p>
+
+                    <p>
+                        <label for="country">Country or region</label>
+                        <select id="country" name="country" autocomplete="country" enterkeyhint="done" required>
+                            <option selected value="SPACER"> </option>
+                            <option value="AF">Afghanistan</option>
+                            <option value="AX">Åland Islands</option>
+                            <option value="AL">Albania</option>
+                            <option value="DZ">Algeria</option>
+                            <option value="AS">American Samoa</option>
+                            <option value="AD">Andorra</option>
+                            <option value="AO">Angola</option>
+                            <option value="AI">Anguilla</option>
+                            <option value="AQ">Antarctica</option>
+                            <option value="AG">Antigua &amp; Barbuda</option>
+                            <option value="AR">Argentina</option>
+                            <option value="AM">Armenia</option>
+                            <option value="AW">Aruba</option>
+                            <option value="AC">Ascension Island</option>
+                            <option value="AU">Australia</option>
+                            <option value="AT">Austria</option>
+                            <option value="AZ">Azerbaijan</option>
+                            <option value="BS">Bahamas</option>
+                            <option value="BH">Bahrain</option>
+                            <option value="BD">Bangladesh</option>
+                            <option value="BB">Barbados</option>
+                            <option value="BY">Belarus</option>
+                            <option value="BE">Belgium</option>
+                            <option value="BZ">Belize</option>
+                            <option value="BJ">Benin</option>
+                            <option value="BM">Bermuda</option>
+                            <option value="BT">Bhutan</option>
+                            <option value="BO">Bolivia</option>
+                            <option value="BA">Bosnia &amp; Herzegovina</option>
+                            <option value="BW">Botswana</option>
+                            <option value="BV">Bouvet Island</option>
+                            <option value="BR">Brazil</option>
+                            <option value="IO">British Indian Ocean Territory</option>
+                            <option value="VG">British Virgin Islands</option>
+                            <option value="BN">Brunei</option>
+                            <option value="BG">Bulgaria</option>
+                            <option value="BF">Burkina Faso</option>
+                            <option value="BI">Burundi</option>
+                            <option value="KH">Cambodia</option>
+                            <option value="CM">Cameroon</option>
+                            <option value="CA">Canada</option>
+                            <option value="CV">Cape Verde</option>
+                            <option value="BQ">Caribbean Netherlands</option>
+                            <option value="KY">Cayman Islands</option>
+                            <option value="CF">Central African Republic</option>
+                            <option value="TD">Chad</option>
+                            <option value="CL">Chile</option>
+                            <option value="CN">China</option>
+                            <option value="CX">Christmas Island</option>
+                            <option value="CC">Cocos (Keeling) Islands</option>
+                            <option value="CO">Colombia</option>
+                            <option value="KM">Comoros</option>
+                            <option value="CG">Congo - Brazzaville</option>
+                            <option value="CD">Congo - Kinshasa</option>
+                            <option value="CK">Cook Islands</option>
+                            <option value="CR">Costa Rica</option>
+                            <option value="CI">Côte d’Ivoire</option>
+                            <option value="HR">Croatia</option>
+                            <option value="CW">Curaçao</option>
+                            <option value="CY">Cyprus</option>
+                            <option value="CZ">Czechia</option>
+                            <option value="DK">Denmark</option>
+                            <option value="DJ">Djibouti</option>
+                            <option value="DM">Dominica</option>
+                            <option value="DO">Dominican Republic</option>
+                            <option value="EC">Ecuador</option>
+                            <option value="EG">Egypt</option>
+                            <option value="SV">El Salvador</option>
+                            <option value="GQ">Equatorial Guinea</option>
+                            <option value="ER">Eritrea</option>
+                            <option value="EE">Estonia</option>
+                            <option value="SZ">Eswatini</option>
+                            <option value="ET">Ethiopia</option>
+                            <option value="FK">Falkland Islands (Islas Malvinas)</option>
+                            <option value="FO">Faroe Islands</option>
+                            <option value="FJ">Fiji</option>
+                            <option value="FI">Finland</option>
+                            <option value="FR">France</option>
+                            <option value="GF">French Guiana</option>
+                            <option value="PF">French Polynesia</option>
+                            <option value="TF">French Southern Territories</option>
+                            <option value="GA">Gabon</option>
+                            <option value="GM">Gambia</option>
+                            <option value="GE">Georgia</option>
+                            <option value="DE">Germany</option>
+                            <option value="GH">Ghana</option>
+                            <option value="GI">Gibraltar</option>
+                            <option value="GR">Greece</option>
+                            <option value="GL">Greenland</option>
+                            <option value="GD">Grenada</option>
+                            <option value="GP">Guadeloupe</option>
+                            <option value="GU">Guam</option>
+                            <option value="GT">Guatemala</option>
+                            <option value="GG">Guernsey</option>
+                            <option value="GN">Guinea</option>
+                            <option value="GW">Guinea-Bissau</option>
+                            <option value="GY">Guyana</option>
+                            <option value="HT">Haiti</option>
+                            <option value="HM">Heard &amp; McDonald Islands</option>
+                            <option value="HN">Honduras</option>
+                            <option value="HK">Hong Kong</option>
+                            <option value="HU">Hungary</option>
+                            <option value="IS">Iceland</option>
+                            <option value="IN">India</option>
+                            <option value="ID">Indonesia</option>
+                            <option value="IR">Iran</option>
+                            <option value="IQ">Iraq</option>
+                            <option value="IE">Ireland</option>
+                            <option value="IM">Isle of Man</option>
+                            <option value="IL">Israel</option>
+                            <option value="IT">Italy</option>
+                            <option value="JM">Jamaica</option>
+                            <option value="JP">Japan</option>
+                            <option value="JE">Jersey</option>
+                            <option value="JO">Jordan</option>
+                            <option value="KZ">Kazakhstan</option>
+                            <option value="KE">Kenya</option>
+                            <option value="KI">Kiribati</option>
+                            <option value="XK">Kosovo</option>
+                            <option value="KW">Kuwait</option>
+                            <option value="KG">Kyrgyzstan</option>
+                            <option value="LA">Laos</option>
+                            <option value="LV">Latvia</option>
+                            <option value="LB">Lebanon</option>
+                            <option value="LS">Lesotho</option>
+                            <option value="LR">Liberia</option>
+                            <option value="LY">Libya</option>
+                            <option value="LI">Liechtenstein</option>
+                            <option value="LT">Lithuania</option>
+                            <option value="LU">Luxembourg</option>
+                            <option value="MO">Macao</option>
+                            <option value="MG">Madagascar</option>
+                            <option value="MW">Malawi</option>
+                            <option value="MY">Malaysia</option>
+                            <option value="MV">Maldives</option>
+                            <option value="ML">Mali</option>
+                            <option value="MT">Malta</option>
+                            <option value="MH">Marshall Islands</option>
+                            <option value="MQ">Martinique</option>
+                            <option value="MR">Mauritania</option>
+                            <option value="MU">Mauritius</option>
+                            <option value="YT">Mayotte</option>
+                            <option value="MX">Mexico</option>
+                            <option value="FM">Micronesia</option>
+                            <option value="MD">Moldova</option>
+                            <option value="MC">Monaco</option>
+                            <option value="MN">Mongolia</option>
+                            <option value="ME">Montenegro</option>
+                            <option value="MS">Montserrat</option>
+                            <option value="MA">Morocco</option>
+                            <option value="MZ">Mozambique</option>
+                            <option value="MM">Myanmar (Burma)</option>
+                            <option value="NA">Namibia</option>
+                            <option value="NR">Nauru</option>
+                            <option value="NP">Nepal</option>
+                            <option value="NL">Netherlands</option>
+                            <option value="NC">New Caledonia</option>
+                            <option value="NZ">New Zealand</option>
+                            <option value="NI">Nicaragua</option>
+                            <option value="NE">Niger</option>
+                            <option value="NG">Nigeria</option>
+                            <option value="NU">Niue</option>
+                            <option value="NF">Norfolk Island</option>
+                            <option value="KP">North Korea</option>
+                            <option value="MK">North Macedonia</option>
+                            <option value="MP">Northern Mariana Islands</option>
+                            <option value="NO">Norway</option>
+                            <option value="OM">Oman</option>
+                            <option value="PK">Pakistan</option>
+                            <option value="PW">Palau</option>
+                            <option value="PS">Palestine</option>
+                            <option value="PA">Panama</option>
+                            <option value="PG">Papua New Guinea</option>
+                            <option value="PY">Paraguay</option>
+                            <option value="PE">Peru</option>
+                            <option value="PH">Philippines</option>
+                            <option value="PN">Pitcairn Islands</option>
+                            <option value="PL">Poland</option>
+                            <option value="PT">Portugal</option>
+                            <option value="PR">Puerto Rico</option>
+                            <option value="QA">Qatar</option>
+                            <option value="RE">Réunion</option>
+                            <option value="RO">Romania</option>
+                            <option value="RU">Russia</option>
+                            <option value="RW">Rwanda</option>
+                            <option value="WS">Samoa</option>
+                            <option value="SM">San Marino</option>
+                            <option value="ST">São Tomé &amp; Príncipe</option>
+                            <option value="SA">Saudi Arabia</option>
+                            <option value="SN">Senegal</option>
+                            <option value="RS">Serbia</option>
+                            <option value="SC">Seychelles</option>
+                            <option value="SL">Sierra Leone</option>
+                            <option value="SG">Singapore</option>
+                            <option value="SX">Sint Maarten</option>
+                            <option value="SK">Slovakia</option>
+                            <option value="SI">Slovenia</option>
+                            <option value="SB">Solomon Islands</option>
+                            <option value="SO">Somalia</option>
+                            <option value="ZA">South Africa</option>
+                            <option value="GS">South Georgia &amp; South Sandwich Islands</option>
+                            <option value="KR">South Korea</option>
+                            <option value="SS">South Sudan</option>
+                            <option value="ES">Spain</option>
+                            <option value="LK">Sri Lanka</option>
+                            <option value="BL">St Barthélemy</option>
+                            <option value="SH">St Helena</option>
+                            <option value="KN">St Kitts &amp; Nevis</option>
+                            <option value="LC">St Lucia</option>
+                            <option value="MF">St Martin</option>
+                            <option value="PM">St Pierre &amp; Miquelon</option>
+                            <option value="VC">St Vincent &amp; Grenadines</option>
+                            <option value="SR">Suriname</option>
+                            <option value="SJ">Svalbard &amp; Jan Mayen</option>
+                            <option value="SE">Sweden</option>
+                            <option value="CH">Switzerland</option>
+                            <option value="TW">Taiwan</option>
+                            <option value="TJ">Tajikistan</option>
+                            <option value="TZ">Tanzania</option>
+                            <option value="TH">Thailand</option>
+                            <option value="TL">Timor-Leste</option>
+                            <option value="TG">Togo</option>
+                            <option value="TK">Tokelau</option>
+                            <option value="TO">Tonga</option>
+                            <option value="TT">Trinidad &amp; Tobago</option>
+                            <option value="TA">Tristan da Cunha</option>
+                            <option value="TN">Tunisia</option>
+                            <option value="TR">Turkey</option>
+                            <option value="TM">Turkmenistan</option>
+                            <option value="TC">Turks &amp; Caicos Islands</option>
+                            <option value="TV">Tuvalu</option>
+                            <option value="UG">Uganda</option>
+                            <option value="UA">Ukraine</option>
+                            <option value="AE">United Arab Emirates</option>
+                            <option value="GB">United Kingdom</option>
+                            <option value="US">United States</option>
+                            <option value="UY">Uruguay</option>
+                            <option value="UM">US Outlying Islands</option>
+                            <option value="VI">US Virgin Islands</option>
+                            <option value="UZ">Uzbekistan</option>
+                            <option value="VU">Vanuatu</option>
+                            <option value="VA">Vatican City</option>
+                            <option value="VE">Venezuela</option>
+                            <option value="VN">Vietnam</option>
+                            <option value="WF">Wallis &amp; Futuna</option>
+                            <option value="EH">Western Sahara</option>
+                            <option value="YE">Yemen</option>
+                            <option value="ZM">Zambia</option>
+                            <option value="ZW">Zimbabwe</option>
+                        </select>
+                    </p>  
+
+                    <h3>Personal Contact Information:</h3>
+
+                    <p>
+                        <label>
+                            Email:
+                            <input type="email" name="email_address" placeholder="email" required><br>
+                        </label>
+                    </p>
+                    
+                    <p>
+                        Can we contact you via email regarding your appointments and/or questions you may have?<br>
+                        <input type="radio" id="yes_to_contact_via_email" name="email_contact" value="yes" required>
+                        <label for="yes_to_contact_via_email">Yes</label><br>
+                    </p>
+
+                    <p>
+                        <input type="radio" id="no_to_contact_via_email" name="email_contact" value="no" required>
+                        <label for="no_to_contact_via_email">No</label><br>
+                    </p>
+                    <p>
+                        <label for="phone">Preferred phone number for voice communication</label>
+                        <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required="true" placeholder="123-456-7890"><br>
+                    </p>
+                </fieldset>
+            </section>
 
 
+            <section>
+                <fieldset>
+                    <h2>Present Health of Patient</h2>
+
+
+                    <p>
+                        <label for="health_desc">Please describe your present health problems and their duration:</label><br>
+                        <textarea id="health_desc" name="health_description" rows="10" cols="66" placeholder="Type here..."></textarea><br>
+                    </p>
+
+                    <p>
+                        <label for="duration_of_problems">How long have you had the chronic conditions about which you are consulting us?</label><br>
+                        <select id="length_of_condition" name="duration_of_issue">
+                            <option value="na">Not Applicable</option>
+                            <option value="Less_than_6_months">Less than 6 months</option>
+                            <option value="6_months_to_2_years">6 months to 2 years</option>
+                            <option value="2_to_5_years">2 to 5 years</option>
+                            <option value="More_than_5_years">More than 5 years</option>
+                        </select><br>
+                    </p>
+
+                    <p>
+                        <label for="progression_of_problems">How have your health problems progressed since they began?</label><br>
+                        <select id="prog_of_issues" name="progression_of_illness">
+                            <option value="na">Not Applicable</option>
+                            <option value="stable">Stable</option>
+                            <option value="gradually_improving">Gradually Improving</option>
+                            <option value="fluctuating">Fluctuating</option>
+                            <option value="gradually_worsening">Gradually Worsening</option>
+                            <option value="rapidly_worsening">Rapidly Worsening</option>
+                        </select><br>
+                    </p>
+
+                    <p>
+                        <label for="intensity_of_problems">Please indicate the overall intensity of your symptoms</label><br>
+                        <select id="intensity_of_issues" name="intensity_of_illness">
+                            <option value="na">Not Applicable</option>
+                            <option value="mild">Mild</option>
+                            <option value="moderate">Moderate</option>
+                            <option value="severe">Severe</option>
+                            <option value="very_severe">very Severe</option>
+                        </select><br>
+                    </p>
+
+                    <p>
+                        <label for="any_non_presc_drugs">Do you take any nonprescription drugs, vitamins and/or any other supplements? Please list them.</label><br>
+                        <textarea id="any_non_presc_drugs" name="non_presc_drugs" rows="10" cols="66" placeholder="Type here..."></textarea><br>
+                    </p>
+
+                    <p>
+                        <label for="any_presc_drugs">Do you currently take medication and/or receive medical treatment for your health condition(s)? If so, include all medications, treatments, and dosages.</label><br>
+                        <textarea id="any_presc_drugs" name="presc_drugs" rows="10" cols="66" placeholder="Type here..."></textarea><br>
+                    </p>
+
+                    <p>
+                        <label for="past_medical_history">Do you have any past medical history or problems (i.e.. illness, trauma, emotional stress, addictions, drug abuse, or anything else that will help us clearly understand your health condition)?</label><br>
+                        <textarea id="past_medical_history" name="medical_history" rows="10" cols="66" placeholder="Type here..."></textarea><br>
+                    </p>
+
+                    <p>
+                        <label for="family_history">Is there a family history of the health problem(s) listed above? If yes, please specify.</label><br>
+                        <textarea id="family_history" name="family_med_history" rows="10" cols="66" placeholder="Type here..."></textarea><br>
+                    </p>
+
+                </fieldset>
+            </section>
+
+
+            <section>
+                <fieldset>
+                    <h2>Immunization Record</h2>
+
+                    Please select what you have recieved vaccines for:
+                    <p>
+                        <input type="checkbox" name="smallpox_vax"/>
+                        <label>Smallpox</label>
+                    </p>
+
+                    <p>
+                        <input type="checkbox" name="polio_vax"/>
+                        <label>Polio</label>
+                    </p>
+
+                    <p>
+                        <input type="checkbox" name="typhoid_vax"/>
+                        <label>Typhoid</label>
+                    </p>
+
+                    <p>
+                        <input type="checkbox" name="mumps_vax"/>
+                        <label>Mumps</label>
+                    </p>
+
+                    <P>
+                        <input type="checkbox" name="tetanus_vax"/>
+                        <label>Tetanus</label>
+                    </P>
+
+                    <p>
+                        <input type="checkbox" name="Influenza_vax"/>
+                        <label>Influenza</label>
+                    </p>
+
+                    <p>
+                        <input type="checkbox" name="covid_vax"/>
+                        <label>COVID-19 (at least  1 Johnson & Johnson shot or 2 Moderna/Pfizer shots)</label>
+                    </p>
+
+                    <p>
+                        <label>Other:</label>
+                        <input type="text" name="other_vax">
+                    </p>
+
+                    <p>
+                        <label for="vax_reaction">Have you ever experienced a reaction to vaccination(s)? If yes, please specify.</label><br>
+                        <textarea id="vax_reaction" name="prev_vax_reaction" rows="10" cols="66" placeholder="Type here..."></textarea>
+                    </p>
+                </fieldset>
+            </section>
+            <button type="submit">Submit New Patient Information</button>
         </form>
-
-
     </body>
 </html>
