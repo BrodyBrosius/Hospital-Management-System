@@ -10,7 +10,7 @@
 
 
     <body>
-        <form action="http://localhost:3000/newpatient" method="POST">
+        <form target="_blank" action="http://localhost:3000/patient" method="POST">
             <section>
                     <fieldset>
                         <h2>Basic Information</h2>
@@ -35,7 +35,7 @@
                         <p>
                             <label>
                                 Please input the occupation of the patient, if they are unemployed then write "unemployed":
-                                <input type="text" name="occupation" placeholder="Occupation" required><br>
+                                <input type="text" name="occupation" required><br>
                             </label>
                         </p>
 
@@ -66,7 +66,7 @@
                     <p>
                         <label>
                             Street Address Line 2 (optional)
-                            <input type="text" name="street_address_line_two" placeholder="Street Address Line 2" required><br>
+                            <input type="text" name="street_address_line_two" placeholder="Street Address Line 2"><br>
                         </label>
                     </p>
 
@@ -414,7 +414,7 @@
                             <option value="mild">Mild</option>
                             <option value="moderate">Moderate</option>
                             <option value="severe">Severe</option>
-                            <option value="very_severe">very Severe</option>
+                            <option value="very_severe">Very Severe</option>
                         </select><br>
                     </p>
 
@@ -450,36 +450,51 @@
                     <p>
                         <input type="checkbox" name="smallpox_vax"/>
                         <label>Smallpox</label>
+
+                        <input type="hidden" name="smallpox_vax"/> <!--This is a way to indicate an unchecked box-->
+
                     </p>
 
                     <p>
                         <input type="checkbox" name="polio_vax"/>
                         <label>Polio</label>
+
+                        <input type="hidden" name="polio_vax"/> <!--This is a way to indicate an unchecked box-->
                     </p>
 
                     <p>
                         <input type="checkbox" name="typhoid_vax"/>
                         <label>Typhoid</label>
+
+                        <input type="hidden" name="typhoid_vax"/> <!--This is a way to indicate an unchecked box-->
                     </p>
 
                     <p>
                         <input type="checkbox" name="mumps_vax"/>
                         <label>Mumps</label>
+
+                        <input type="hidden" name="mumps_vax"/> <!--This is a way to indicate an unchecked box-->
                     </p>
 
                     <P>
                         <input type="checkbox" name="tetanus_vax"/>
                         <label>Tetanus</label>
+
+                        <input type="hidden" name="tetanus_vax"/> <!--This is a way to indicate an unchecked box-->
                     </P>
 
                     <p>
-                        <input type="checkbox" name="Influenza_vax"/>
+                        <input type="checkbox" name="influenza_vax"/>
                         <label>Influenza</label>
+
+                        <input type="hidden" name="influenza_vax"/> <!--This is a way to indicate an unchecked box-->
                     </p>
 
                     <p>
                         <input type="checkbox" name="covid_vax"/>
                         <label>COVID-19 (at least  1 Johnson & Johnson shot or 2 Moderna/Pfizer shots)</label>
+
+                        <input type="hidden" name="covid_vax"/> <!--This is a way to indicate an unchecked box-->
                     </p>
 
                     <p>
@@ -493,7 +508,7 @@
                     </p>
                 </fieldset>
             </section>
-            <button type="submit">Submit New Patient Information</button>
+            <input onclick="window.location.href = 'http://localhost:1234';" type="submit" value="Submit New Patient Information"/>
         </form>
     </body>
 </html>
