@@ -3,14 +3,33 @@
     <head>
         <meta charset="utf-8">
         <title>New Patient Portal</title>
-    </head>
+        <link rel="stylesheet" href="/newpatientpage_style.95770482.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="/newpatientpage_style.95770482.js"></script></head>
+
+
 
     <h1>Welcome to the New Patient Portal page.</h1>
-    <h2>This page is dedicated to basic contact information for the new patient.</h2>
-
+    <h2>This page is dedicated to basic information about the new patient.</h2>
+    
+ 
 
     <body>
-        <form target="_blank" action="http://localhost:3000/patient" method="POST">
+        <div class="newpatient-modal">
+            <div class="modal-content">
+                <div class="close">+</div>
+                <img src="/green_checkmark.svg.6d3d631a.png" alt="">
+                <p>
+                    New patient has been added to the database!
+                </p>
+
+                <form>
+                    <input type="button" value="OK">
+                </form>
+
+            </div>
+        </div>
+        <form method="POST" id="patient_info">
             <section>
                     <fieldset>
                         <h2>Basic Information</h2>
@@ -18,8 +37,8 @@
                             <label>
                                 <h3>Patient Name:</h3>
                                 Please enter the name of the patient here:
-                                <input type="text" name="first_name" placeholder="First Name" required="">
-                                <input type="text" name="last_name" placeholder="Last Name" required=""><br>
+                                <input type="text" name="first_name" placeholder="First Name" required="" id="first_name_id">
+                                <input type="text" name="last_name" placeholder="Last Name" required="" id="last_name_id"><br>
                             </label>
                         </p>
 
@@ -27,7 +46,7 @@
                         <p>
                             <label>
                                 Please input the date of birth for the patient here:
-                                <input type="date" name="date_of_birth" placeholder="Date of Birth" required=""><br>
+                                <input type="date" name="date_of_birth" placeholder="Date of Birth" required="" id="dob"><br>
                             </label>
                         </p>
 
@@ -35,14 +54,14 @@
                         <p>
                             <label>
                                 Please input the occupation of the patient, if they are unemployed then write "unemployed":
-                                <input type="text" name="occupation" required=""><br>
+                                <input type="text" name="occupation" required="" id="occupation_id"><br>
                             </label>
                         </p>
 
                         <p>
                             <label>
                                 How did the patient hear about us?
-                                <input type="text" name="how_they_heard_about_us" required=""><br>
+                                <input type="text" name="how_they_heard_about_us" required="" id="how_they_heard_about_us_id"><br>
                             </label>
                         </p>
                     </fieldset>
@@ -59,35 +78,35 @@
                     <p>
                         <label>
                             Street Address
-                            <input type="text" name="street_address_line_one" placeholder="Street Address" required="">
+                            <input type="text" name="street_address_line_one" placeholder="Street Address" required="" id="street_address_one_id">
                         </label>
                     </p>
 
                     <p>
                         <label>
                             Street Address Line 2 (optional)
-                            <input type="text" name="street_address_line_two" placeholder="Street Address Line 2"><br>
+                            <input type="text" name="street_address_line_two" placeholder="Street Address Line 2" id="street_address_two_id"><br>
                         </label>
                     </p>
 
                     <p>
                         <label>
                             City
-                            <input type="text" name="city" placeholder="City" required="">
+                            <input type="text" name="city" placeholder="City" required="" id="city_id">
                         </label>
                     </p>
 
                     <p>
                         <label>
                             County/State/Province
-                            <input type="text" name="county_state_province" placeholder="County/State/Province" required=""><br>
+                            <input type="text" name="county_state_province" placeholder="County/State/Province" required="" id="csp_id"><br>
                         </label>
                     </p>
 
                     <p>
                         <label>
                             Postal / ZIP Code
-                            <input type="text" name="postal_zip_code" placeholder="Postal / Zip Code" required="">
+                            <input type="text" name="postal_zip_code" placeholder="Postal / Zip Code" required="" id="postal_zip_id">
                         </label>
                     </p>
 
@@ -352,7 +371,7 @@
                     <p>
                         <label>
                             Email:
-                            <input type="email" name="email_address" placeholder="email" required=""><br>
+                            <input type="email" name="email_address" placeholder="email" required="" id="email_id"><br>
                         </label>
                     </p>
                     
@@ -448,7 +467,7 @@
 
                     Please select what you have recieved vaccines for:
                     <p>
-                        <input type="checkbox" name="smallpox_vax">
+                        <input type="checkbox" name="smallpox_vax" id="smallpox_id">
                         <label>Smallpox</label>
 
                         <input type="hidden" name="smallpox_vax"> <!--This is a way to indicate an unchecked box-->
@@ -456,42 +475,42 @@
                     </p>
 
                     <p>
-                        <input type="checkbox" name="polio_vax">
+                        <input type="checkbox" name="polio_vax" id="polio_id">
                         <label>Polio</label>
 
                         <input type="hidden" name="polio_vax"> <!--This is a way to indicate an unchecked box-->
                     </p>
 
                     <p>
-                        <input type="checkbox" name="typhoid_vax">
+                        <input type="checkbox" name="typhoid_vax" id="typhoid_id">
                         <label>Typhoid</label>
 
                         <input type="hidden" name="typhoid_vax"> <!--This is a way to indicate an unchecked box-->
                     </p>
 
                     <p>
-                        <input type="checkbox" name="mumps_vax">
+                        <input type="checkbox" name="mumps_vax" id="mumps_id">
                         <label>Mumps</label>
 
                         <input type="hidden" name="mumps_vax"> <!--This is a way to indicate an unchecked box-->
                     </p>
 
                     <P>
-                        <input type="checkbox" name="tetanus_vax">
+                        <input type="checkbox" name="tetanus_vax" id="tetanus_id">
                         <label>Tetanus</label>
 
                         <input type="hidden" name="tetanus_vax"> <!--This is a way to indicate an unchecked box-->
                     </P>
 
                     <p>
-                        <input type="checkbox" name="influenza_vax">
+                        <input type="checkbox" name="influenza_vax" id="influenza_id">
                         <label>Influenza</label>
 
                         <input type="hidden" name="influenza_vax"> <!--This is a way to indicate an unchecked box-->
                     </p>
 
                     <p>
-                        <input type="checkbox" name="covid_vax">
+                        <input type="checkbox" name="covid_vax" id="covid_id">
                         <label>COVID-19 (at least  1 Johnson & Johnson shot or 2 Moderna/Pfizer shots)</label>
 
                         <input type="hidden" name="covid_vax"> <!--This is a way to indicate an unchecked box-->
@@ -499,7 +518,7 @@
 
                     <p>
                         <label>Other:</label>
-                        <input type="text" name="other_vax">
+                        <input type="text" name="other_vax" id="other_vax_id">
                     </p>
 
                     <p>
@@ -508,7 +527,17 @@
                     </p>
                 </fieldset>
             </section>
-            <input onclick="window.location.href = 'http://localhost:1234';" type="submit" value="Submit New Patient Information">
+            <p>
+                <input type="submit" value="Add New Patient">
+            </p>
         </form>
+
+        <form action="/mainpage.html">
+            <p>
+                <input type="submit" value="Return To Homepage">
+            </p>
+        </form>
+        
+        <script src="/npp_js.d1183c6d.js"></script>    
     </body>
 </html>
