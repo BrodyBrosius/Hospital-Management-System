@@ -21,7 +21,7 @@ $(document).ready(function(){
             $.ajax({
                 url: "http://localhost:3000/patient",
                 method: "POST",
-                data: raw_form_input,
+                data: patient_data,
                 success: function(res){
                     try {
                         document.querySelector('.newpatient-modal').style.display = 'flex';
