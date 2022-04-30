@@ -10,11 +10,13 @@
 
 
     <h1>Welcome to the New Patient Portal page.</h1>
+    
     <h2>This page is dedicated to basic information about the new patient.</h2>
     
  
 
     <body>
+
         <div class="newpatient-modal">
             <div class="modal-content">
                 <div class="close">+</div>
@@ -24,12 +26,14 @@
                 </p>
 
                 <form>
-                    <input type="button" value="OK">
+                    <input type="button" value="OK" id="ok_button">
                 </form>
 
             </div>
-        </div>
+        </div>    
+
         <form method="POST" id="patient_info">
+            <a name="top_of_page"></a>
             <section>
                     <fieldset>
                         <h2>Basic Information</h2>
@@ -527,9 +531,9 @@
                     </p>
                 </fieldset>
             </section>
-            <p>
-                <input type="submit" value="Add New Patient">
-            </p>
+                <p>
+                        <input type="submit" value="Add New Patient">
+                </p>
         </form>
 
         <form action="/mainpage.html">
@@ -538,6 +542,7 @@
             </p>
         </form>
         
-        <script src="/npp_js.d1183c6d.js"></script>    
+        <script src="/npp_js.d1183c6d.js"></script>
+        
     </body>
 </html>

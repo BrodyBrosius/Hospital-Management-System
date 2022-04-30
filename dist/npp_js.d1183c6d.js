@@ -123,18 +123,50 @@ $(document).ready(function () {
     event.preventDefault();
     var raw_form_input = document.getElementById("patient_info");
     var formData = new FormData(raw_form_input);
-    patient_data = {};
+    var patient_data = {};
     formData.forEach(function (value, key) {
-      return patient_data[key] = value;
-    });
-    $.ajax({
-      url: "http://localhost:3000/patient",
-      method: "POST",
-      data: patient_data,
-      success: function success(res) {
-        console.log('success!');
+      //Populates patient_data object with HTML form data and also validates multi-select inputs
+      if (!Reflect.has(patient_data, key)) {
+        patient_data[key] = value;
+        return;
       }
+
+      if (!Array.isArray(patient_data[key])) {
+        patient_data[key] = [patient_data[key]];
+      }
+
+      patient_data[key].push(value);
     });
+
+    try {
+      $.ajax({
+        url: "http://localhost:3000/patient",
+        method: "POST",
+        data: raw_form_input,
+        success: function success(res) {
+          try {
+            document.querySelector('.newpatient-modal').style.display = 'flex';
+            document.querySelector('.close').addEventListener('click', function () {
+              document.querySelector('.newpatient-modal').style.display = 'none';
+            });
+            document.getElementById('ok_button').addEventListener('click', function () {
+              document.querySelector('.newpatient-modal').style.display = 'none';
+            });
+          } catch (err) {
+            alert("Patient Addition to database failed. Please try again or contact an administrator. Error: " + err);
+          }
+        },
+        error: function error(jqXHR, textStatus, errorThrown) {
+          try {
+            alert("Patient Addition to database failed. Please try again or contact an administrator. Error: " + jqXHR.status);
+          } catch (err) {
+            alert("Patient Addition to database failed. Please try again or contact an administrator. Error: " + err);
+          }
+        }
+      });
+    } catch (err) {
+      alert("Patient Addition to database failed. Please try again or contact an administrator. Error: " + err);
+    }
   });
 });
 },{}],"../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
@@ -165,7 +197,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54490" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61263" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
