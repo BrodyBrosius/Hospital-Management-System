@@ -1,29 +1,11 @@
-const express = require('express')
-const app = express()
-const bodyparser = require('body-parser')
-const cors = require('cors')
-const bodyParser = require('body-parser')
-const port = 3000
-const { createQLDBDriver } = require("../qldbdriversetup.cjs")
-const { v4 : uuidv4} = require('uuid')
-const { LEDGER_NAME, PATIENT_TABLE_NAME, INSERT_INTO_TEST_TABLE } = require("../constants/constants.cjs")
-
-
-//packages
-app.use( bodyParser.json() ); //to support JSON encoded bodies
-
-app.use(bodyParser.urlencoded({ // to support URL encoded bodies
-    extended: true}))
-app.use(cors())
-
-//Verify server is working
-app.get('/patient', (req, res)=>{
-res.send("Welcome to your server")
-})
-
+const express = require('express');
+const router = express.Router();
+const { createQLDBDriver } = require('../qldbdriversetup.cjs');
+const { v4: uuidv4 } = require('uuid');
+const { INSERT_INTO_TEST_TABLE } = require('../constants/constants.cjs')
 
 //Route that handles new patient logic
-app.post('/patient', async function(req, res) {
+router.post('/patient', async function(req, res) {
     const driver = createQLDBDriver();
     const patient_unique_id = uuidv4();
 
@@ -79,8 +61,7 @@ app.post('/patient', async function(req, res) {
 
 })
 
-//Start server on port 3000
-app.listen(port, ()=>{
-    console.log(`Server is running on port ${port}`)
-})
+module.exports = router;
+
+
 
