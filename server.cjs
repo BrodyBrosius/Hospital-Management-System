@@ -29,3 +29,7 @@ app.get('/', (req, res)=>{
 })
 
 app.use('/', require('./server/routes/patient.cjs'));
+
+
+const login_route = require("./server/routes/login.cjs");
+app.use(login_route);
