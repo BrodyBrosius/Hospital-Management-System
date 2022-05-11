@@ -2,7 +2,7 @@
   "name": "in-tune-hospital-management",
   "type": "module",
   "scripts": {
-    "dev": "concurrently \"node server.cjs\" \"parcel mainpage.html\""
+    "dev": "concurrently \"node server.cjs\" \"parcel login.html\""
   },
   "dependencies": {
     "ajax": "^0.0.4",
