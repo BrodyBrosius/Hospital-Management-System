@@ -2,13 +2,15 @@
   "name": "in-tune-hospital-management",
   "type": "module",
   "scripts": {
-    "dev": "concurrently \"node server.cjs\" \"parcel login.html\""
+    "dev": "concurrently \"parcel login.html\" \"node server.cjs\""
   },
   "dependencies": {
     "ajax": "^0.0.4",
     "amazon-qldb-driver-nodejs": "^2.2.0",
     "aws-sdk": "^2.1090.0",
+    "bcrypt": "^5.0.1",
     "cors": "^2.8.5",
+    "deasync": "^0.1.26",
     "express": "^4.18.1",
     "ion-js": "^4.0.0",
     "jquery": "^3.6.0",
