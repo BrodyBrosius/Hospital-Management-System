@@ -1,6 +1,6 @@
-
-cache
-parcel-cache
-vscode
-package-lock.json
-node_modules
+cache/
+parcel-cache/
+vscode/
+.package-lock.json
+.package.json
+node_modules/
