@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/login_style.6d2e3bed.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <title>Login to In-Tune!</title>
+<script src="/login_style.6d2e3bed.js"></script></head>
+<body>
+    <h1>Welcome to the In-Tune Hospital Management System.</h1>
+    <h2>Please login with your User ID and password to continue.</h2>
+
+    <div class="login-section">
+        <form method="POST" id="login_form" action="/logindata">
+            <section>
+                <fieldset>
+                    <h2>Please login.</h2>
+                    <p>
+                        <label>User Role:</label><br>
+                        <select id="user_role" name="user_role_field">
+                            <option value="Select Role">Please select a role</option>
+                            <option value="Admin/HR">Admin/HR</option>
+                            <option value="Doctor">Doctor</option>
+                            <option value="Nurse">Nurse</option>
+                        </select><br>
+                    </p>
+                    <p>
+                        <label>User ID:
+                            <input type="text" name="user_id_field" id="user_id" required="">
+                        </label>
+                    </p> 
+                    <p>
+                        <label>Password:
+                            <input type="password" name="password_field" id="password" required="">
+                        </label>
+                    </p>
+                    <button type="submit" id="login_submit_btn">Login</button>
+                </fieldset>
+            </section>
+        </form>
+        <script src="/loginform_js.e5717149.cjs"></script> 
+    </div>
+    
+</body>
+</html>
