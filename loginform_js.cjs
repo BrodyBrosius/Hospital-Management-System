@@ -17,8 +17,6 @@ $(document).ready(function () {
             login_data[key].push(value);
         });
 
-        console.log(login_data);
-
         $.ajax({
             url:"http://localhost:3000/login/logindata", 
             method: "POST",

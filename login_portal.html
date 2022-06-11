@@ -18,6 +18,15 @@
                 <fieldset>
                     <h2>Please login.</h2>
                     <p>
+                        <label>User Role:</label><br>
+                        <select id="user_role" name="user_role_field">
+                            <option value="Select Role">Please select a role</option>
+                            <option value="Admin/HR">Admin/HR</option>
+                            <option value="Doctor">Doctor</option>
+                            <option value="Nurse">Nurse</option>
+                        </select><br>
+                    </p>
+                    <p>
                         <label>User ID:
                             <input type="text" name="user_id_field" id="user_id" required>
                         </label>
@@ -27,7 +36,7 @@
                             <input type="password" name="password_field" id="password" required>
                         </label>
                     </p>
-                    <button type="submit" id="login_submit_btn">Submit</button>
+                    <button type="submit" id="login_submit_btn">Login</button>
                 </fieldset>
             </section>
         </form>
