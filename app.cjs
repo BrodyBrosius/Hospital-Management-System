@@ -4,6 +4,10 @@ const bodyparser = require('body-parser')
 const cors = require('cors')
 const bodyParser = require('body-parser')
 const port = 3000
+const passport = require('passport');
+const local = require('./passport-config.cjs');
+
+
 
 
 //packages
@@ -13,8 +17,8 @@ app.use(bodyParser.urlencoded({ // to support URL encoded bodies
     extended: true}))
 app.use(cors())
 
-
-
+app.use(passport.initialize());
+app.use(passport.session());
 
 
 
