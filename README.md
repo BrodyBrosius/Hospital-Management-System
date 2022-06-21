@@ -1,0 +1,2 @@
+# Hospital-Management-System
+Amateur hospital management system created from scratch by me. I have utilized a variety of technologies for this application. Notably, I have used Node.js, Express.js, HTML, CSS, Passport.js as well as Amazon Web Services Quantum Ledger Database. The purpose of this project is to push me out of my comfort zone in utilizing javascript and other technologies to create a full stack application with AWS.
